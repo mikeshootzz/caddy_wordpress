@@ -34,10 +34,11 @@ services:
       - ./wordpress:/var/www/html
     networks:
       - wpnet
-  # Webserver
+  # Caddy
   caddy:
     image: caddy:alpine
-    container_name: webserver
+    container_name: caddy
+    restart: always
     ports:
       - 80:80
       - 443:443
